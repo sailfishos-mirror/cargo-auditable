@@ -23,3 +23,12 @@ When calling other programs such as `cmake` or `maturin`, the shell alias usuall
 REAL_CARGO='/path/to/real/cargo' # replace this with your path
 exec "$REAL_CARGO" auditable "$@"
 ```
+
+If you want to preserve rustup's `+toolchain` syntax, shift it before the `auditable` subcommand:
+
+```bash
+case "$1" in
+  +*) toolchain="$1"; shift; exec "$REAL_CARGO" "$toolchain" auditable "$@" ;;
+   *)                        exec "$REAL_CARGO"              auditable "$@" ;;
+esac
+```
