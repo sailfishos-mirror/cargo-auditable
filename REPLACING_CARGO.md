@@ -16,7 +16,7 @@ When calling other programs such as `cmake` or `maturin`, the shell alias usuall
 2. Copy the snippet provided below and replace '/path/to/cargo' with the path you got at step 1
 3. Save it to a file named `cargo`
 4. Run `chmod +x cargo` to make the script executable
-5. Prepend the path to the directory where you saved the script to your `PATH` environment variable. For example, if you saved the script as `$HOME/.bin/cargo`, you need to add `$HOME/.bin/` to your `PATH`. The exact way to do this varies depending on the shell; in bash it's `export PATH="$HOME/.bin/:$PATH"`
+5. Prepend the path to the directory where you saved the script to your `PATH` environment variable. For example, if you saved the script as `$HOME/.local/bin/cargo`, you need to make sure `$HOME/.local/bin/` is on your `PATH`. The exact way to do this varies depending on the shell; in bash it's `export PATH="$HOME/.local/bin/:$PATH"`
 
 ```bash
 #!/bin/sh
